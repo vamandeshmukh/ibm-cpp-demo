@@ -9,7 +9,7 @@ int main()
 
     std::cout << "Enter your id: ";
     std::cin >> id;
-    std::cout << "Enter your name: ";
+    std::cout << "Enter your name: "; // Sonu Joshi
     std::getline(std::cin, name);
     std::cout << "Enter your salary: ";
     std::cin >> salary;
