@@ -1,15 +1,26 @@
-// version 5
+// version 6
 #include <iostream>
 
 int main()
 {
-    for (char b = 0; b < 1000; ++b) {
-        std::cout << b << " ";
-    }
-    std::cout << std::endl;
+    int num = 10;
+    char ch = 'a';
+    std::cout << ch + num;
     return 0;
 }
 
+
+// // version 5
+// #include <iostream>
+
+// int main()
+// {
+//     for (char b = 0; b < 1000; ++b) {
+//         std::cout << b << " ";
+//     }
+//     std::cout << std::endl;
+//     return 0;
+// }
 
 // // version 4
 // #include <iostream>
