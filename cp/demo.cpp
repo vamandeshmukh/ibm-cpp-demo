@@ -2,7 +2,6 @@
 #include <iostream>
 
 int main() {
-    int someInt = 10;
     std::string name;
     std::cout << "Enter your name: "; // Sonu Joshi 
     std::cin >> name; // this     
