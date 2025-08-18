@@ -8,6 +8,7 @@ using namespace std;
 // - add vector<skillset> array 
 // - vector<skillset> printing dynamically using range-based for loop
 // - also use some other methods from vector 
+// - also handle null values properly 
 
 struct Address
 {
@@ -21,19 +22,22 @@ struct Employee
     int id;
     string name;
     double salary;
+    double bonus; 
     vector<string> phones;
     Address address;
+    vector<string> skillset;
+
     void printData()
     {
         cout << id << " " << name << " " << salary << endl;
-        // use phones.size();
-
-        cout << phones[0] << " " << phones[1] << endl;
+        // cout use phones.size();
         cout << address.street << " " << address.city << " " << address.pin << endl;
+        // cout use range-based for loop to print skillset 
     }
     double calcBonus(int bonusPct)
     {
         return salary + (salary * bonusPct / 100);
+        // set to bonus field 
     }
 };
 
