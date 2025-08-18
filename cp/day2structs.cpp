@@ -14,7 +14,7 @@ int main()
     emp.id = 101;
     emp.name = "Sonu";
     emp.salary = 50000.50;
-    cout << emp.id << "" << emp.name << " " << emp.salary << endl;
+    cout << emp.id << " " << emp.name << " " << emp.salary << endl;
 
     return 0;
 }
