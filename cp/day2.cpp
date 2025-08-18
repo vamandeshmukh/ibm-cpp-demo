@@ -13,7 +13,7 @@ int main()
     cout << *smrtPtr << endl;
     shared_ptr<int> sharedPtr(new int(30)); // smart pointer 2
     cout << *sharedPtr << endl;
-
+    delete ptr; // delete
     return 0;
 }
 
