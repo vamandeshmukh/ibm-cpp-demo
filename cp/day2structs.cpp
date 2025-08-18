@@ -1,14 +1,13 @@
+// add
+// - vector<phones> printing dynamically using phones.size();
+// - add vector<skillset> array
+// - vector<skillset> printing dynamically using range-based for loop
+// - also use some other methods from vector
+// - also handle null values properly
+
 #include <iostream>
 #include <vector>
 using namespace std;
-
-// add 
-// - vector<phones> printing dynamically using phones.size(); 
-// - bonus can be set only through calcBonus function 
-// - add vector<skillset> array 
-// - vector<skillset> printing dynamically using range-based for loop
-// - also use some other methods from vector 
-// - also handle null values properly 
 
 struct Address
 {
@@ -22,39 +21,73 @@ struct Employee
     int id;
     string name;
     double salary;
-    double bonus; 
     vector<string> phones;
     Address address;
     vector<string> skillset;
+    double bonus = 0.0;
 
     void printData()
     {
         cout << id << " " << name << " " << salary << endl;
-        // cout use phones.size();
+        cout << (bonus > 0 ? to_string(bonus) : "No bonus!") << endl;
+
+        if (!phones.empty())
+        {
+            for (int i = 0; i < phones.size(); i++)
+            {
+                cout << phones.at(i) << " ";
+            }
+            cout << endl;
+        }
+        else
+        {
+            cout << "No phones!" << endl;
+        }
+
         cout << address.street << " " << address.city << " " << address.pin << endl;
-        // cout use range-based for loop to print skillset 
+
+        if (!skillset.empty())
+        {
+            for (const auto &skill : skillset)
+            {
+                cout << skill << " ";
+            }
+            cout << endl;
+        }
+        else
+        {
+            cout << "No skills!" << endl;
+        }
     }
-    double calcBonus(int bonusPct)
+
+    void calcBonus(int bonusPct)
     {
-        return salary + (salary * bonusPct / 100);
-        // set to bonus field 
+        bonus = salary * bonusPct / 100;
     }
 };
 
 int main()
 {
+    Employee emp1 = {101, "Tonu Pandey", 90000.00, {"9822012345", "9876543210"}, {"Thanisandra", "Bengaluru", 500063}, {"C++", "SQL", "React"}, 1.0};
 
-    Employee emp1 = {101, "Tonu Pandey", 90000.00, {"9822012345", "9876543210"}, {"Thanisandra", "Bengaluru", 500063}};
+    emp1.calcBonus(10);
     emp1.printData();
 
-    Employee emp2 = {102, "Monu Reddy", 80000.00, {"6789012345"}, {"Thanisandra", "Bengaluru", 500063}};
-    // emp2.phones.push_back("6789012345");
-    // emp2.phones.size();
+    Employee emp2 = {
+        102, "Monu Reddy", 80000.00, {}, {"BTM Layout", "Bengaluru", 500076}, {}};
+    emp2.printData();
+    emp2.phones.push_back("6789012345");
+    emp2.skillset.push_back("Java");
+    emp2.skillset.push_back("Spring Boot");
+    emp2.calcBonus(15);
     emp2.printData();
 
-    Employee emp3 = {103, "Sony Patel", 90000.00, {"9822012345", "9876543210", "9876543210"}, {"Thanisandra", "Bengaluru", 500063}};
-    emp3.printData();
+    Employee emp3 = {103, "Sony Patel", 95000.00, {"9822012345", "9876543210", "9012345678"}, {"Bank street, Abids", "Hyderabad", 500001}, {"SQL", "CPP", "Python"}};
 
+    emp3.printData();
+    emp3.phones.pop_back();
+    emp3.calcBonus(20);
+    emp3.printData();
 
     return 0;
 }
