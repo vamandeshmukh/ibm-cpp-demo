@@ -1,7 +1,13 @@
-// using vector
 #include <iostream>
 #include <vector>
 using namespace std;
+
+// add 
+// - vector<phones> printing dynamically using phones.size(); 
+// - bonus can be set only through calcBonus function 
+// - add vector<skillset> array 
+// - vector<skillset> printing dynamically using range-based for loop
+// - also use some other methods from vector 
 
 struct Address
 {
@@ -36,16 +42,15 @@ int main()
 
     Employee emp1 = {101, "Tonu Pandey", 90000.00, {"9822012345", "9876543210"}, {"Thanisandra", "Bengaluru", 500063}};
     emp1.printData();
-    double bonus = emp1.calcBonus(10);
-    cout << bonus << endl;
 
     Employee emp2 = {102, "Monu Reddy", 80000.00, {"6789012345"}, {"Thanisandra", "Bengaluru", 500063}};
-    emp2.phones.push_back("6789012345");
-    emp2.phones.size();
-
+    // emp2.phones.push_back("6789012345");
+    // emp2.phones.size();
     emp2.printData();
-    bonus = emp2.calcBonus(5);
-    cout << bonus << endl;
+
+    Employee emp3 = {103, "Sony Patel", 90000.00, {"9822012345", "9876543210", "9876543210"}, {"Thanisandra", "Bengaluru", 500063}};
+    emp3.printData();
+
 
     return 0;
 }
