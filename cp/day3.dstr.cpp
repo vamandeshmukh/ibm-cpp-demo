@@ -1,7 +1,24 @@
 #include <iostream>
 using namespace std;
 
-class Person
+class Human
+{
+public:
+    void display()
+    {
+        cout << "Human is here!" << endl;
+    }
+    Human()
+    {
+        cout << "Human object created!" << endl;
+    }
+    ~Human()
+    {
+        cout << "Human object destroyed!" << endl;
+    }
+};
+
+class Person : public Human
 {
 public:
     void display()
@@ -21,14 +38,14 @@ public:
 class Employee : public Person
 {
 public:
-    // Employee()
-    // {
-    //     cout << "Employee object created!" << endl;
-    // }
-    // ~Employee()
-    // {
-    //     cout << "Employee object destroyed!" << endl;
-    // }
+    Employee()
+    {
+        cout << "Employee object created!" << endl;
+    }
+    ~Employee()
+    {
+        cout << "Employee object destroyed!" << endl;
+    }
 };
 
 int main()
