@@ -20,8 +20,7 @@ int main()
     cout << num << endl;
     double num2 = add(3.50, 4.75);
     cout << num2 << endl;
-    // string num3 = add("aaa", "bbb");
-    // cout << num3 << endl;
+    // invoke tempFun here
     return 0;
 }
 
