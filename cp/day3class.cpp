@@ -10,13 +10,21 @@ using namespace std;
 
 class Employee
 {
+
+private:
+    static string officePhone;
+
+private:
+    double salary;
+
 public:
     int id;
     string name;
-    double salary;
 
-    // // member initializer list
-    // Employee(int i, string n, double s) : id(i), name(n), salary(s) {}
+    // member initializer list
+    Employee(int i, string n, double s) : id(i), name(n), salary(s) {}
+
+    Employee() {}
 
     //  assignment inside the body
     Employee(int i, string n, double s)
@@ -25,6 +33,10 @@ public:
         name = n;
         salary = s;
     }
+
+    class SubEmployee
+    {
+    };
 
     void display()
     {
@@ -35,9 +47,12 @@ public:
 int main()
 {
     Employee emp1(101, "Sonu", 50000.0);
-    Employee emp2(102, "Monu", 60000.0);
+    Employee *emp2 = new Employee(102, "Monu", 60000.0);
+    Employee *emp3 = new Employee();
+    Employee emp4;
     emp1.display();
-    emp2.display();
+    // emp2.display();
+    // emp3.display();
 
     return 0;
 }
