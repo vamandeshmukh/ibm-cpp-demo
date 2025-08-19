@@ -1,12 +1,19 @@
 #include <iostream>
 using namespace std;
 
+// template function with one datatype
 template <typename T>
 T add(T x, T y)
 {
     return x + y;
 }
 
+// template function with multiple datatypes
+template <typename T1, typename T2>
+void tempFun(T1 x, T2 y)
+{
+    cout << "x: " << x << ", y: " << y << endl;
+}
 int main()
 {
     int num = add(10, 20);
@@ -17,10 +24,6 @@ int main()
     // cout << num3 << endl;
     return 0;
 }
-
-
-
-
 
 // #include <iostream>
 // using namespace std;
