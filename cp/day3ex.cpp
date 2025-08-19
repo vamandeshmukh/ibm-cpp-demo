@@ -11,6 +11,10 @@ public:
         {
             throw runtime_error("Division by zero is not allowed.");
         }
+        if (a < 0 || b < 0)
+        {
+            throw invalid_argument("Negative numbers are not allowed.");
+        }
         return a / b;
     }
 };
@@ -28,9 +32,21 @@ int main()
         c = calc.divideNums(a, b);
         cout << "Result: " << c << endl;
     }
-    catch (const std::exception &e)
+    catch (runtime_error &e)
     {
         std::cerr << e.what() << '\n';
+    }
+    catch (invalid_argument &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch (...)
+    {
+        std::cerr << "Something is wrong!" << '\n';
     }
     return 0;
 }
