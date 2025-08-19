@@ -17,6 +17,12 @@ public:
         return Complex(real + other.real, imag + other.imag);
     }
 
+    // Operator overloading for -
+    Complex operator-(const Complex &other)
+    {
+        return Complex(real - other.real, imag - other.imag);
+    }
+
     // Function to display complex number
     void display()
     {
@@ -30,9 +36,10 @@ int main()
     Complex c2(1, 2);
 
     Complex c3 = c1 + c2; // Uses overloaded + operator
-    // Complex c4 = c1 - c2; // CE error: no match for 'operator-' (operand types are 'Complex' and 'Complex')
+    Complex c4 = c1 - c2; // CE error: no match for 'operator-' (operand types are 'Complex' and 'Complex')
 
     c3.display(); // Output: 4 + 6i
+    c4.display(); // Output: 4 + 6i
     return 0;
 }
 
