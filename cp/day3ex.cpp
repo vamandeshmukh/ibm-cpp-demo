@@ -7,6 +7,7 @@ class Calc
 public:
     int divideNums(int a, int b)
     {
+        cout << "a: " << a << ", b: " << b << endl;
         if (b == 0)
         {
             throw runtime_error("Division by zero is not allowed.");
